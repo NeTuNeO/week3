@@ -1,10 +1,23 @@
 const { writeData } = require("../utils/data"); // Чтение и запись данных в JSON-файл
 
 // Получим игры из JSON-файла и отправим в ответ на запрос
+<<<<<<< Updated upstream
 const sendAllGames = async (req, res) => {
   res.send(req.games);
 };
 
+=======
+const sendAllGames = (req, res) => {
+  res.send(req.games);
+};
+
+const sendUpdatedGames = (req, res) => {
+  res.send({
+    games: req.games,
+    updated: req.updatedObject
+  });
+};
+>>>>>>> Stashed changes
 const deleteGame = async (req, res) => {
   // Прочитаем запрашиваемый id игры из запроса
     const id = Number(req.params.id);
@@ -67,5 +80,10 @@ const addGameController = async (req, res) => {
 module.exports = {
     sendAllGames,
     deleteGame,
+<<<<<<< Updated upstream
     addGameController
+=======
+    addGameController,
+    sendUpdatedGames,
+>>>>>>> Stashed changes
 }
